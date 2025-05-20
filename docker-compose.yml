@@ -5,6 +5,7 @@ services:
     environment:
       CPU: 2
       RAM: 4G
+      DISK_SIZE: 20G
       VNC_DISPLAY: 3
     ports:
       - "5903:5903"
