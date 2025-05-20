@@ -82,6 +82,8 @@ Host: <your-host-ip>
 Port: <VNC_PORT> (default 5901)
 ```
 
+![plot](./images/Example.jpeg)
+
 ---
 
 ## 💾 Persistent Storage
