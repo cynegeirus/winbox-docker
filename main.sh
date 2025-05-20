@@ -4,8 +4,11 @@ CPU=${CPU:-1}
 RAM=${RAM:-2G}
 RDP_PORT=${RDP_PORT:-3389}
 VNC_DISPLAY=${VNC_DISPLAY:-2}
+DISK_SIZE=${DISK_SIZE:=20G}
 
-qemu-img create -f qcow2 /machine/os.qcow2 20G
+if [ ! -f /vm/os.qcow2 ]; then
+  qemu-img create -f qcow2 /vm/os.qcow2 $DISK_SIZE
+fi
 
 qemu-system-x86_64 \
     -enable-kvm \
