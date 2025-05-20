@@ -1,0 +1,20 @@
+services:
+  machine:
+    build:
+      context: .
+    environment:
+      CPU: 2
+      RAM: 4G
+      VNC_DISPLAY: 3
+    ports:
+      - "5903:5903"
+    devices:
+      - "/dev/kvm:/dev/kvm"
+    cap_add:
+      - ALL
+    security_opt:
+      - seccomp=unconfined
+    volumes:
+      - ./machine:/machine
+      - ./iso:/iso
+    restart: always
